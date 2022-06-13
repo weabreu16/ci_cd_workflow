@@ -1,0 +1,24 @@
+{
+  "name": "ci_cd_workflow",
+  "version": "1.0.0",
+  "description": "Node.js Project to make a CI-CD Workflow using GitHub.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weabreu16/ci_cd_workflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weabreu16/ci_cd_workflow/issues"
+  },
+  "homepage": "https://github.com/weabreu16/ci_cd_workflow#readme",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  }
+}
