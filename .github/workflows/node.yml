@@ -28,6 +28,8 @@ jobs:
         
     - name: Analyze code statically using JSHint
       uses: moneyforward/jshint-action@v0
+      with:
+        files: src/
       
     - name: Install Dependencies
       run: npm ci
