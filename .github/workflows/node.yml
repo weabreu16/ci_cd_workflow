@@ -26,10 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - name: Analyze code statically using JSHint
-      uses: moneyforward/jshint-action@v0
+    - name: Analyze code statically using Lint
+      uses: sibiraj-s/action-eslint@v2
       with:
-        files: src/
+        eslint-args: '--ignore-path=.gitignore --quiet'
+        extensions: 'js,jsx,ts,tsx'
+        annotations: true
       
     - name: Install Dependencies
       run: npm ci
