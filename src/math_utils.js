@@ -1,6 +1,6 @@
 const { ESLint } = require('eslint');
 
-// A comment
+// A comment, nice
 
 function sum( ...args ) {
     let sum = 0;
