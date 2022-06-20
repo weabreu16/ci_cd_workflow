@@ -20,5 +20,8 @@
   "homepage": "https://github.com/weabreu16/ci_cd_workflow#readme",
   "devDependencies": {
     "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "eslint": "^8.18.0"
   }
 }
