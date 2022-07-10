@@ -70,6 +70,7 @@ jobs:
           content="${content//$'\n'/'%0A'}"
           content="${content//$'\r'/'%0D'}"
           echo "::set-output name=packageJson::$content"
+          echo $content
       
       - name: Verifying Test Results
         if: ${{ fromJson(steps.results.outputs.packageJson).success == false }}
