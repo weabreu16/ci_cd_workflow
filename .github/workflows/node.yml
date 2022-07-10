@@ -44,6 +44,12 @@ jobs:
     
     - name: Test
       run: npm test
+    
+    - name: Upload Test Result as Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: test_results
+        path: artifacts/test_results.json
   
   cd:
     runs-on: ubuntu-latest
