@@ -22,12 +22,3 @@ jobs:
     
     - name: Install Dependencies
       run: npm install
-
-    - name: Build image
-      run: |
-        docker build -t test_image:latest .
-
-    - name: Upload image
-      uses: ishworkh/docker-image-artifact-upload@v1
-      with:
-        image: "test_image:latest"
