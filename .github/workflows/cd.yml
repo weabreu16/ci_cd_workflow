@@ -12,25 +12,6 @@ jobs:
     environment: development
 
     steps:
-      - name: Download Test Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: test_results
-      
-      - name: Read Test Result Data
-        id: results
-        run: |
-          content=`cat test_results.json`
-          content="${content//'%'/'%25'}"
-          content="${content//$'\n'/'%0A'}"
-          content="${content//$'\r'/'%0D'}"
-          echo "::set-output name=packageJson::$content"
-          echo $content
-      
-      - name: Verifying Test Results
-        if: ${{ fromJson(steps.results.outputs.packageJson).success == false }}
-        run: set -eo pipefail
-
       - name: Checkout Repository
         uses: actions/checkout@v3
       
@@ -41,3 +22,12 @@ jobs:
       
       - name: Install Dependencies
         run: npm install
+
+      - name: Build image
+        run: |
+          docker build -t test_image:latest .
+
+    - name: Upload image
+      uses: ishworkh/docker-image-artifact-upload@v1
+      with:
+        image: "test_image:latest"
