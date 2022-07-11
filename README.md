@@ -2,11 +2,15 @@
 Node.js Project to make a CI-CD Workflow using GitHub.
 
 ```mermaid
-graph LR;
+flowchart
     subgraph CI
-        Build --> Test;
+        direction LR
+        Build --> Test
     end
+    Test --> A --> Deploy
     subgraph CD
-        Test --> Deploy;
+        direction RL
+        Deploy
     end
+    A(Artifacts<br /> - Docker Image <br /> - Test Results)
 ```
