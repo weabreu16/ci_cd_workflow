@@ -12,20 +12,20 @@ jobs:
     environment: development
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-      
-      - name: Install Dependencies
-        run: npm install
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+    
+    - name: Install Dependencies
+      run: npm install
 
-      - name: Build image
-        run: |
-          docker build -t test_image:latest .
+    - name: Build image
+      run: |
+        docker build -t test_image:latest .
 
     - name: Upload image
       uses: ishworkh/docker-image-artifact-upload@v1
